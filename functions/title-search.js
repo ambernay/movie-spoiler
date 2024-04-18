@@ -1,7 +1,6 @@
 const axios = require('axios');
 const handler = async (event) => {
  const tmdb_key = '9c9519dc449bbf790a84023525a11fe6';
- const giphy_key = 'eQ4TwuU0VsAbLctRXychU3MD9aPSRmtr';
  const tmdb_search_endpoint = `https://api.themoviedb.org/3/search/movie?`;
 
   const {query, language, include_adult, include_video, page} = event.queryStringParameters ;
