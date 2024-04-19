@@ -1,11 +1,12 @@
 const axios = require('axios');
 const handler = async (event) => {
- const tmdb_key = '9c9519dc449bbf790a84023525a11fe6';
+ const tmdb_key = process.env.tmdb_api_key;
  const tmdb_search_endpoint = `https://api.themoviedb.org/3/search/movie?`;
 
   const {query, language, include_adult, include_video, page} = event.queryStringParameters ;
   const tmdb_search_url = `${tmdb_search_endpoint}api_key=${tmdb_key}&query=${query}&language=${language}&include_adult=${include_adult}&include_video=${include_video}&page=${page}}`;
- try{
+ 
+  try{
   const { data } = await axios.get(tmdb_search_url);
 
   return {

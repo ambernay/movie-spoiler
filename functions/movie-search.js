@@ -1,6 +1,6 @@
 const axios = require('axios');
 const handler = async (event) => {
-    const tmdb_key = '9c9519dc449bbf790a84023525a11fe6';
+    const tmdb_key = process.env.tmdb_api_key;
   
   const { query } = event.queryStringParameters ;
   const tmdb_movie_url = `https://api.themoviedb.org/3/movie/${query}/keywords?api_key=${tmdb_key}`
